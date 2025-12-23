@@ -1,0 +1,172 @@
+@use '../mixins' as *;
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+
+    .modal {
+        background: var(--bg-color);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        width: 100%;
+        max-width: 500px;
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        @include glass;
+        background: var(--bg-color); // Opaque fallback or blend
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+
+            .close-btn {
+                background: none;
+                border: none;
+                color: var(--text-muted);
+                cursor: pointer;
+                padding: 4px;
+                border-radius: 50%;
+
+                &:hover {
+                    background: var(--card-bg);
+                    color: var(--text-color);
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+
+            section {
+                margin-bottom: 2rem;
+
+                h3 {
+                    font-size: 0.85rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: var(--text-muted);
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .setting-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                select,
+                input[type="text"] {
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    color: var(--text-color);
+                    padding: 0.5rem;
+                    border-radius: 6px;
+                    font-family: inherit;
+                }
+
+                .checkbox-label {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    cursor: pointer;
+
+                    input {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                &.actions-row {
+                    gap: 1rem;
+
+                    button {
+                        flex: 1;
+                    }
+                }
+
+                .help-text {
+                    color: var(--text-muted);
+                    display: block;
+                    margin-top: 0.5rem;
+                    line-height: 1.4;
+
+                    code {
+                        background: var(--card-bg);
+                        padding: 0.1rem 0.3rem;
+                        border-radius: 4px;
+                        font-family: monospace;
+                        border: 1px solid var(--card-border);
+                    }
+                }
+            }
+
+            button {
+                padding: 0.6rem 1rem;
+                border-radius: 8px;
+                border: 1px solid var(--card-border);
+                background: var(--card-bg);
+                color: var(--text-color);
+                cursor: pointer;
+                transition: all 0.2s;
+                font-family: inherit;
+                font-size: 0.9rem;
+
+                &:hover {
+                    background: var(--card-border);
+                }
+
+                &.danger-btn {
+                    color: #ff6b6b;
+                    border-color: rgba(255, 107, 107, 0.3);
+
+                    &:hover {
+                        background: rgba(255, 107, 107, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

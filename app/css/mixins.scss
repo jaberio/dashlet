@@ -1,0 +1,11 @@
+// Variables
+$primary-color: var(--primary-color, #3b82f6);
+$bg-glass: rgba(255, 255, 255, 0.1);
+$border-glass: rgba(255, 255, 255, 0.2);
+
+@mixin glass {
+    background: var(--card-bg, rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.2));
+}

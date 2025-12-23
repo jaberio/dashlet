@@ -1,0 +1,20 @@
+{
+  "name": "dashlet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch app/css/main.scss:app/css/main.css",
+    "serve": "live-server app --port=3000",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run serve\"",
+    "build": "sass app/css/main.scss:app/css/main.css --no-source-map --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.97.1"
+  }
+}

@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+
+# Dependencies
+node_modules
+
+# Build
+dist
+build
+
+# Logs
+npm-debug.log
+error.log
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db

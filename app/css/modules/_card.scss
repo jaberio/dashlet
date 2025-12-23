@@ -1,0 +1,94 @@
+@use '../mixins' as *;
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    aspect-ratio: 1;
+    perspective: 1000px;
+
+    .card-glass {
+        position: absolute;
+        inset: 0;
+        @include glass;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(12px);
+        // Background handled by mixin/variable now
+    }
+
+    .card-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: center;
+
+        .icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 1rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        .info {
+            .name {
+                font-weight: 600;
+                font-size: 0.95rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .desc {
+                font-size: 0.75rem;
+                opacity: 0.6;
+                display: none; // Hide desc by default in grid
+            }
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // Animation
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+
+    @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.05}s;
+        }
+    }
+
+    &:hover {
+        .card-glass {
+            background: var(--card-bg); // Use variable
+            filter: brightness(1.2); // Brighten instead of hardcode
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--text-color); // Highlight border
+            opacity: 0.9;
+        }
+    }
+}

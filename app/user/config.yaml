@@ -1,0 +1,92 @@
+# Dashlet Configuration
+
+settings:
+  theme: system # system, dark, light
+  accentColor: '#3b82f6'
+  blur: true
+  animations: true
+  openNewTab: true
+  layout: grid # grid, list
+  weatherEnabled: false # true
+  weatherLocation: '' # 'Stockholm,SE' or 'London,UK' or 'New York,US'
+
+services:  
+  - name: GitLab
+    url: https://gitlab.com
+    icon: https://about.gitlab.com/ico/favicon-144x144.png
+    description: DevOps platform
+
+  - name: Gitea
+    url: http://localhost:3001
+    icon: https://gitea.io/images/favicon.png
+    description: Self-hosted Git service
+
+  - name: Nextcloud
+    url: http://localhost:8080
+    icon: https://nextcloud.com/favicon.ico
+    description: Self-hosted cloud storage
+
+  - name: Nginx Proxy Manager
+    url: http://localhost:81
+    icon: https://nginxproxymanager.com/icon.png
+    description: Reverse proxy manager
+
+  - name: Pi-hole
+    url: http://localhost/admin
+    icon: https://pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png
+    description: Network-wide ad blocker
+
+  - name: Vaultwarden
+    url: http://localhost:8222
+    icon: https://vaultwarden.net/favicon.ico
+    description: Lightweight Bitwarden server
+
+  - name: Transmission
+    url: http://localhost:9091
+    icon: https://transmissionbt.com/favicon.ico
+    description: BitTorrent client
+
+  - name: qBittorrent
+    url: http://localhost:8085
+    icon: https://www.qbittorrent.org/favicon.ico
+    description: Torrent client
+
+  - name: Uptime Kuma
+    url: http://localhost:3001
+    icon: https://uptime.kuma.pet/img/icon.svg
+    description: Uptime monitoring
+
+  - name: AdGuard Home
+    url: http://localhost:3000
+    icon: https://adguard.com/favicon.ico
+    description: Network ad & tracker blocker
+
+  - name: Syncthing
+    url: http://localhost:8384
+    icon: https://syncthing.net/img/favicon.png
+    description: File synchronization
+
+  - name: Watchtower
+    url: http://localhost:8088
+    icon: https://containrrr.dev/watchtower/logo.png
+    description: Auto-update Docker containers
+
+  - name: Paperless-ngx
+    url: http://localhost:8010
+    icon: https://docs.paperless-ngx.com/assets/favicon.ico
+    description: Document management system
+
+  - name: Immich
+    url: http://localhost:2283
+    icon: https://immich.app/img/favicon.png
+    description: Self-hosted photo backup
+
+  - name: Mealie
+    url: http://localhost:9925
+    icon: https://mealie.io/favicon.ico
+    description: Recipe manager
+
+  - name: Speedtest Tracker
+    url: http://localhost:8765
+    icon: https://openspeedtest.com/favicon.ico
+    description: Internet speed tracking

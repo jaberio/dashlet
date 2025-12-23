@@ -1,0 +1,71 @@
+@use 'mixins' as *;
+@use 'modules/layout';
+@use 'modules/card';
+@use 'modules/modal';
+
+// Global Resets
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Theme Variables
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] {
+    --bg-color: #e6eaf0;
+    --text-color: #1a1a1a;
+    --text-muted: rgba(0, 0, 0, 0.6);
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --card-border: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-image: radial-gradient(circle at 50% 0%, var(--card-border) 0%, transparent 60%);
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+// Utility classes for toggleable settings
+body.no-blur {
+
+    .sidebar,
+    .modal,
+    .card-glass,
+    .sidebar-toggle-float {
+        backdrop-filter: none !important;
+        background: rgba(30, 30, 30, 0.95) !important; // Fallback opaque
+    }
+}
+
+body.no-animations {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
