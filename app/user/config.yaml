@@ -90,3 +90,33 @@ services:
     url: http://localhost:8765
     icon: https://openspeedtest.com/favicon.ico
     description: Internet speed tracking
+
+  - name: Jellyfin
+    url: http://localhost:8096
+    icon: https://jellyfin.org/images/favicon.ico
+    description: Media server
+
+  - name: Plex
+    url: http://localhost:32400
+    icon: https://www.plex.tv/wp-content/uploads/2016/09/plex-64.png
+    description: Media server
+
+  - name: Sonarr
+    url: http://localhost:8989
+    icon: https://sonarr.tv/img/logo.png
+    description: TV Show monitor
+
+  - name: Radarr
+    url: http://localhost:7878
+    icon: https://radarr.video/img/logo.png
+    description: Movie monitor
+
+  - name: Portainer
+    url: http://localhost:9000
+    icon: https://www.portainer.io/hubfs/images/2022/Portainer%20Logo.svg
+    description: Docker management
+
+  - name: Home Assistant
+    url: http://homeassistant.local:8123
+    icon: https://www.home-assistant.io/images/favicon.ico
+    description: Home automation
