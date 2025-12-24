@@ -2,7 +2,7 @@
 
 > Lightweight dashboard for small apps
 >
-> **[Live Demo](https://jaypel.github.io/dashlet/)**
+> **[Live Demo](https://jaberqayad.github.io/dashlet/)**
 
 Dashlet is a modern, self-hosted dashboard for your homelab services, focusing on a clean code, modular styling, and robust settings management.
 
