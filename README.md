@@ -10,13 +10,13 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
 
 - **Pure & Fast**: Built with Vanilla JS and SCSS. No heavy frameworks.
 - **Glassmorphism UI**: Modern, sleek interface with dynamic animations.
-- **Config Driven**: Load settings/services from `user/config.yaml`.
+- **Config Driven**: Load settings/services from `public/config.json`.
 - **Customizable**:
     - **Themes**: System, Dark, Light, Custom Accent Colors.
     - **Backgrounds**: Set custom wallpaper URLs.
     - **Drag & Drop**: Reorder your services easily.
     - **Header/Footer**: Clean layout with fixed controls.
-    - **Custom Files**: `user/custom.css` and `user/custom.js` support.
+    - **Custom Files**: `public/custom.css` and `public/custom.js` support.
 
 ## Installation
 
@@ -52,10 +52,8 @@ docker run -d -p 3000:3000 --name dashlet jaypel/dashlet:latest
 
 Or using **Docker Compose**:
 
-> [!IMPORTANT]
-> **Volume Mount Error**: If you see `not a directory` or `are you trying to mount a directory onto a file`, it means `app/user/config.yaml` is missing on your host machine.
-> 1. Create the file manully: `mkdir -p app/user && touch app/user/config.yaml`
-> 2. OR remove the `- ./app/user/config.yaml...` line to use the default config initially.
+> [!TIP]
+> **Data Persistence**: Mount the `/app/public` volume to persist your configuration (`config.json`) and custom assets.
 
 ```yaml
 services:
@@ -65,41 +63,47 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./app/user:/app/user
+      - ./app/public:/app/public
     restart: unless-stopped
 ```
 
 ## Configuration
 
-You can configure Dashlet via the UI or by editing `user/config.yaml`.
-Export your current settings from the UI to generate a fresh config file.
+You can configure Dashlet via the UI (Settings > Export Config) or by editing `public/config.json`.
+Export your current settings from the UI to generate a fresh `config.json` file.
 
-### Example `user/config.yaml`
+### Example `public/config.json`
 
-```yaml
-settings:
-  appTitle: "My Dashboard"
-  greeting: "Welcome Home"
-  theme: "dark" # system, dark, light
-  accentColor: "#3b82f6"
-  wallpaper: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
-  blur: true
-  layout: "grid" # grid, list
-  openNewTab: true
-  animations: true
-
-services:
-  - id: "1"
-    name: "GitHub"
-    description: "Code hosting"
-    url: "https://github.com"
-    icon: "https://github.githubassets.com/favicons/favicon.png"
-  
-  - id: "2"
-    name: "YouTube"
-    description: "Watch videos"
-    url: "https://youtube.com"
-    icon: "https://www.youtube.com/s/desktop/10c3d9b4/img/favicon_144x144.png"
+```json
+{
+  "settings": {
+    "appTitle": "My Dashboard",
+    "greeting": "Welcome Home",
+    "theme": "dark",
+    "accentColor": "#3b82f6",
+    "wallpaper": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e",
+    "blur": true,
+    "layout": "grid",
+    "openNewTab": true,
+    "animations": true
+  },
+  "services": [
+    {
+      "id": "1",
+      "name": "GitHub",
+      "description": "Code hosting",
+      "url": "https://github.com",
+      "icon": "https://github.githubassets.com/favicons/favicon.png"
+    },
+    {
+      "id": "2",
+      "name": "YouTube",
+      "description": "Watch videos",
+      "url": "https://youtube.com",
+      "icon": "https://www.youtube.com/s/desktop/10c3d9b4/img/favicon_144x144.png"
+    }
+  ]
+}
 ```
 
 ## Contributing
