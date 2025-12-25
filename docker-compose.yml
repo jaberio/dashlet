@@ -6,5 +6,5 @@ services:
       - "3000:3000"
     volumes:
       # Mount the local config.yaml to allow hot-reloading/editing of config
-      - ./app/user/config.yaml:/app/app/user/config.yaml:ro
+      - ./app/user/config.yaml:/app/user/config.yaml:ro
     restart: unless-stopped

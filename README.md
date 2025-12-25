@@ -60,7 +60,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./user/config.yaml:/app/app/user/config.yaml:ro
+      - ./app/user/config.yaml:/app/user/config.yaml:ro
     restart: unless-stopped
 ```
 
