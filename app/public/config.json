@@ -222,120 +222,118 @@
             "description": "Reverse proxy with UI",
             "url": "https://nginxproxymanager.com",
             "icon": "https://nginxproxymanager.com/favicon.ico"
+        },
+        {
+            "id": "github",
+            "name": "GitHub",
+            "url": "https://github.com",
+            "icon": "https://github.githubassets.com/favicons/favicon.png",
+            "description": "Code hosting platform"
+        },
+        {
+            "id": "youtube",
+            "name": "YouTube",
+            "url": "https://youtube.com",
+            "icon": "https://www.youtube.com/s/desktop/10c3d9b4/img/favicon_144x144.png",
+            "description": "Video sharing"
+        },
+        {
+            "id": "reddit",
+            "name": "Reddit",
+            "url": "https://reddit.com",
+            "icon": "https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png",
+            "description": "Front page of the internet"
+        },
+        {
+            "id": "gmail",
+            "name": "Gmail",
+            "url": "https://mail.google.com",
+            "icon": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
+            "description": "Email by Google"
+        },
+        {
+            "id": "twitter",
+            "name": "X (Twitter)",
+            "url": "https://twitter.com",
+            "icon": "https://abs.twimg.com/favicons/twitter.ico",
+            "description": "Social Media"
+        },
+        {
+            "id": "netflix",
+            "name": "Netflix",
+            "url": "https://netflix.com",
+            "icon": "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico",
+            "description": "Streaming Service"
+        },
+        {
+            "id": "amazon",
+            "name": "Amazon",
+            "url": "https://amazon.com",
+            "icon": "https://www.amazon.com/favicon.ico",
+            "description": "E-commerce"
+        },
+        {
+            "id": "chatgpt",
+            "name": "ChatGPT",
+            "url": "https://chatgpt.com",
+            "icon": "https://chatgpt.com/favicon.ico",
+            "description": "AI Assistant"
+        },
+        {
+            "id": "whatsapp",
+            "name": "WhatsApp",
+            "url": "https://web.whatsapp.com",
+            "icon": "https://www.whatsapp.com/favicon.ico",
+            "description": "Chat with friends and family"
+        },
+        {
+            "id": "discord",
+            "name": "Discord",
+            "url": "https://discord.com",
+            "icon": "https://discord.com/favicon.ico",
+            "description": "Chat with friends and family"
+        },
+        {
+            "id": "spotify",
+            "name": "Spotify",
+            "url": "https://spotify.com",
+            "icon": "https://spotify.com/favicon.ico",
+            "description": "Music streaming"
+        },
+        {
+            "id": "instagram",
+            "name": "Instagram",
+            "url": "https://instagram.com",
+            "icon": "https://instagram.com/favicon.ico",
+            "description": "Social Media"
+        },
+        {
+            "id": "tiktok",
+            "name": "TikTok",
+            "url": "https://tiktok.com",
+            "icon": "https://tiktok.com/favicon.ico",
+            "description": "Social Media"
+        },
+        {
+            "id": "telegram",
+            "name": "Telegram",
+            "url": "https://telegram.com",
+            "icon": "https://telegram.com/favicon.ico",
+            "description": "Chat with friends and family"
+        },
+        {
+            "id": "twitter",
+            "name": "X (Twitter)",
+            "url": "https://twitter.com",
+            "icon": "https://abs.twimg.com/favicons/twitter.ico",
+            "description": "Social Media"
+        },
+        {
+            "id": "linkedin",
+            "name": "LinkedIn",
+            "url": "https://linkedin.com",
+            "icon": "https://www.linkedin.com/favicon.ico",
+            "description": "Professional networking"
         }
     ]
-
-        {
-        "id": "github",
-        "name": "GitHub",
-        "url": "https://github.com",
-        "icon": "https://github.githubassets.com/favicons/favicon.png",
-        "description": "Code hosting platform"
-    },
-    {
-        "id": "youtube",
-        "name": "YouTube",
-        "url": "https://youtube.com",
-        "icon": "https://www.youtube.com/s/desktop/10c3d9b4/img/favicon_144x144.png",
-        "description": "Video sharing"
-    },
-    {
-        "id": "reddit",
-        "name": "Reddit",
-        "url": "https://reddit.com",
-        "icon": "https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png",
-        "description": "Front page of the internet"
-    },
-    {
-        "id": "gmail",
-        "name": "Gmail",
-        "url": "https://mail.google.com",
-        "icon": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
-        "description": "Email by Google"
-    },
-    {
-        "id": "twitter",
-        "name": "X (Twitter)",
-        "url": "https://twitter.com",
-        "icon": "https://abs.twimg.com/favicons/twitter.ico",
-        "description": "Social Media"
-    },
-    {
-        "id": "netflix",
-        "name": "Netflix",
-        "url": "https://netflix.com",
-        "icon": "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico",
-        "description": "Streaming Service"
-    },
-    {
-        "id": "amazon",
-        "name": "Amazon",
-        "url": "https://amazon.com",
-        "icon": "https://www.amazon.com/favicon.ico",
-        "description": "E-commerce"
-    },
-    {
-        "id": "chatgpt",
-        "name": "ChatGPT",
-        "url": "https://chatgpt.com",
-        "icon": "https://chatgpt.com/favicon.ico",
-        "description": "AI Assistant"
-    },
-    {
-        "id": "whatsapp",
-        "name": "WhatsApp",
-        "url": "https://web.whatsapp.com",
-        "icon": "https://www.whatsapp.com/favicon.ico",
-        "description": "Chat with friends and family"
-    },
-    {
-        "id": "discord",
-        "name": "Discord",
-        "url": "https://discord.com",
-        "icon": "https://discord.com/favicon.ico",
-        "description": "Chat with friends and family"
-    },
-    {
-        "id": "spotify",
-        "name": "Spotify",
-        "url": "https://spotify.com",
-        "icon": "https://spotify.com/favicon.ico",
-        "description": "Music streaming"
-    },
-    {
-        "id": "instagram",
-        "name": "Instagram",
-        "url": "https://instagram.com",
-        "icon": "https://instagram.com/favicon.ico",
-        "description": "Social Media"
-    },
-    {
-        "id": "tiktok",
-        "name": "TikTok",
-        "url": "https://tiktok.com",
-        "icon": "https://tiktok.com/favicon.ico",
-        "description": "Social Media"
-    },
-    {
-        "id": "telegram",
-        "name": "Telegram",
-        "url": "https://telegram.com",
-        "icon": "https://telegram.com/favicon.ico",
-        "description": "Chat with friends and family"
-    },
-    {
-        "id": "twitter",
-        "name": "X (Twitter)",
-        "url": "https://twitter.com",
-        "icon": "https://abs.twimg.com/favicons/twitter.ico",
-        "description": "Social Media"
-    },
-    {
-        "id": "linkedin",
-        "name": "LinkedIn",
-        "url": "https://linkedin.com",
-        "icon": "https://www.linkedin.com/favicon.ico",
-        "description": "Professional networking"
-    }
-]
 }
