@@ -39,8 +39,10 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
 
 ### Deployment (Netlify/Vercel)
 
-- **Build Command**: `npm run build`
-- **Output Directory**: `.` (Current directory) or just serve `index.html`.
+- [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JaberQayad/dashlet) 
+
+- [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git-source?repository=https://github.com/JaberQayad/dashlet)
+
 
 ### Docker Deployment
 
