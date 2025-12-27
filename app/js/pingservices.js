@@ -54,7 +54,12 @@ export class PingServices {
         if (config.settings) {
             // Merge regular settings
             Object.keys(config.settings).forEach(key => {
-                settings.set(key, config.settings[key]);
+                const val = config.settings[key];
+                // Only overwrite local settings if the config value is NOT empty/null
+                // This allows UI validation/local overrides to stick unless explicitly set in config
+                if (val !== "" && val !== null && val !== undefined) {
+                    settings.set(key, val);
+                }
             });
         }
 
