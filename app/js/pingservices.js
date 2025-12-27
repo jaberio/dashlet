@@ -64,7 +64,7 @@ export class PingServices {
                 ...s,
                 id: s.id || `json-${i}`
             }));
-            services.replaceAll(mappedServices);
+            services.sync(mappedServices);
         }
     }
 }

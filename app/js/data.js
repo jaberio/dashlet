@@ -58,6 +58,38 @@ export class DataStore {
         this.save();
     }
 
+    sync(configServices) {
+        // Create a map/set of config IDs for fast lookup
+        const configMap = new Map();
+        configServices.forEach(s => configMap.set(s.id, s));
+        const configIds = new Set(configServices.map(s => s.id));
+
+        const finalList = [];
+        const addedIds = new Set(); // Track what we've added to avoid dupes
+
+        // 1. Preserve local order: Iterate local services. 
+        // If they exist in config, take the CONFIG version (updated data) but keep LOCAL position.
+        this.services.forEach(localS => {
+            if (configIds.has(localS.id)) {
+                finalList.push(configMap.get(localS.id));
+                addedIds.add(localS.id);
+            }
+            // If local service is NOT in config, it is effectively deleted by the strict sync logic
+        });
+
+        // 2. Append new items from config that weren't in local
+        configServices.forEach(configS => {
+            if (!addedIds.has(configS.id)) {
+                finalList.push(configS);
+                addedIds.add(configS.id);
+            }
+        });
+
+        this.services = finalList;
+        this.save();
+        this.notify();
+    }
+
     reorder(newOrderIds) {
         // specific logic to reorder based on IDs if needed, or just replace array if full list provided
         // implementation depends on UI drag-drop

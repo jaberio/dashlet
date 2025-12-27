@@ -14,116 +14,328 @@
     },
     "services": [
         {
-            "id": "github",
-            "name": "GitHub",
-            "url": "https://github.com",
-            "icon": "https://github.githubassets.com/favicons/favicon.png",
-            "description": "Code hosting platform"
+            "id": "1",
+            "name": "Nextcloud",
+            "description": "Self-hosted cloud storage",
+            "url": "https://nextcloud.com",
+            "icon": "https://nextcloud.com/wp-content/themes/next/assets/img/favicon.ico"
         },
         {
-            "id": "youtube",
-            "name": "YouTube",
-            "url": "https://youtube.com",
-            "icon": "https://www.youtube.com/s/desktop/10c3d9b4/img/favicon_144x144.png",
-            "description": "Video sharing"
+            "id": "2",
+            "name": "Gitea",
+            "description": "Self-hosted Git service",
+            "url": "https://gitea.io",
+            "icon": "https://gitea.io/images/favicon.png"
         },
         {
-            "id": "reddit",
-            "name": "Reddit",
-            "url": "https://reddit.com",
-            "icon": "https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png",
-            "description": "Front page of the internet"
+            "id": "3",
+            "name": "Jellyfin",
+            "description": "Media streaming server",
+            "url": "https://jellyfin.org",
+            "icon": "https://jellyfin.org/images/favicon.ico"
         },
         {
-            "id": "gmail",
-            "name": "Gmail",
-            "url": "https://mail.google.com",
-            "icon": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
-            "description": "Email by Google"
+            "id": "4",
+            "name": "Home Assistant",
+            "description": "Home automation platform",
+            "url": "https://www.home-assistant.io",
+            "icon": "https://www.home-assistant.io/images/favicon.ico"
         },
         {
-            "id": "twitter",
-            "name": "X (Twitter)",
-            "url": "https://twitter.com",
-            "icon": "https://abs.twimg.com/favicons/twitter.ico",
-            "description": "Social Media"
+            "id": "5",
+            "name": "Bitwarden",
+            "description": "Password manager",
+            "url": "https://bitwarden.com",
+            "icon": "https://bitwarden.com/favicon.ico"
         },
         {
-            "id": "netflix",
-            "name": "Netflix",
-            "url": "https://netflix.com",
-            "icon": "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico",
-            "description": "Streaming Service"
+            "id": "6",
+            "name": "Vaultwarden",
+            "description": "Lightweight Bitwarden server",
+            "url": "https://github.com/dani-garcia/vaultwarden",
+            "icon": "https://github.githubassets.com/favicons/favicon.png"
         },
         {
-            "id": "amazon",
-            "name": "Amazon",
-            "url": "https://amazon.com",
-            "icon": "https://www.amazon.com/favicon.ico",
-            "description": "E-commerce"
+            "id": "7",
+            "name": "Pi-hole",
+            "description": "Network-wide ad blocker",
+            "url": "https://pi-hole.net",
+            "icon": "https://pi-hole.net/wp-content/uploads/2018/12/favicon.png"
         },
         {
-            "id": "chatgpt",
-            "name": "ChatGPT",
-            "url": "https://chatgpt.com",
-            "icon": "https://chatgpt.com/favicon.ico",
-            "description": "AI Assistant"
+            "id": "8",
+            "name": "Grafana",
+            "description": "Metrics visualization",
+            "url": "https://grafana.com",
+            "icon": "https://grafana.com/static/img/fav32.png"
         },
         {
-            "id": "whatsapp",
-            "name": "WhatsApp",
-            "url": "https://web.whatsapp.com",
-            "icon": "https://www.whatsapp.com/favicon.ico",
-            "description": "Chat with friends and family"
+            "id": "9",
+            "name": "Prometheus",
+            "description": "Monitoring system",
+            "url": "https://prometheus.io",
+            "icon": "https://prometheus.io/favicon.ico"
         },
         {
-            "id": "discord",
-            "name": "Discord",
-            "url": "https://discord.com",
-            "icon": "https://discord.com/favicon.ico",
-            "description": "Chat with friends and family"
+            "id": "10",
+            "name": "Portainer",
+            "description": "Docker management UI",
+            "url": "https://www.portainer.io",
+            "icon": "https://www.portainer.io/favicon.ico"
         },
         {
-            "id": "spotify",
-            "name": "Spotify",
-            "url": "https://spotify.com",
-            "icon": "https://spotify.com/favicon.ico",
-            "description": "Music streaming"
+            "id": "11",
+            "name": "Uptime Kuma",
+            "description": "Self-hosted uptime monitoring",
+            "url": "https://github.com/louislam/uptime-kuma",
+            "icon": "https://github.githubassets.com/favicons/favicon.png"
         },
         {
-            "id": "instagram",
-            "name": "Instagram",
-            "url": "https://instagram.com",
-            "icon": "https://instagram.com/favicon.ico",
-            "description": "Social Media"
+            "id": "12",
+            "name": "FreshRSS",
+            "description": "RSS feed reader",
+            "url": "https://freshrss.org",
+            "icon": "https://freshrss.org/favicon.ico"
         },
         {
-            "id": "tiktok",
-            "name": "TikTok",
-            "url": "https://tiktok.com",
-            "icon": "https://tiktok.com/favicon.ico",
-            "description": "Social Media"
+            "id": "13",
+            "name": "Mattermost",
+            "description": "Team chat platform",
+            "url": "https://mattermost.com",
+            "icon": "https://mattermost.com/wp-content/uploads/2022/02/favicon.png"
         },
         {
-            "id": "telegram",
-            "name": "Telegram",
-            "url": "https://telegram.com",
-            "icon": "https://telegram.com/favicon.ico",
-            "description": "Chat with friends and family"
+            "id": "14",
+            "name": "Rocket.Chat",
+            "description": "Self-hosted chat server",
+            "url": "https://www.rocket.chat",
+            "icon": "https://www.rocket.chat/favicon.ico"
         },
         {
-            "id": "twitter",
-            "name": "X (Twitter)",
-            "url": "https://twitter.com",
-            "icon": "https://abs.twimg.com/favicons/twitter.ico",
-            "description": "Social Media"
+            "id": "15",
+            "name": "Matrix Synapse",
+            "description": "Decentralized chat server",
+            "url": "https://matrix.org",
+            "icon": "https://matrix.org/favicon.ico"
         },
         {
-            "id": "linkedin",
-            "name": "LinkedIn",
-            "url": "https://linkedin.com",
-            "icon": "https://www.linkedin.com/favicon.ico",
-            "description": "Professional networking"
+            "id": "16",
+            "name": "Keycloak",
+            "description": "Identity and access management",
+            "url": "https://www.keycloak.org",
+            "icon": "https://www.keycloak.org/resources/favicon.ico"
+        },
+        {
+            "id": "17",
+            "name": "OpenVPN",
+            "description": "VPN server",
+            "url": "https://openvpn.net",
+            "icon": "https://openvpn.net/favicon.ico"
+        },
+        {
+            "id": "18",
+            "name": "WireGuard",
+            "description": "Modern VPN solution",
+            "url": "https://www.wireguard.com",
+            "icon": "https://www.wireguard.com/favicon.ico"
+        },
+        {
+            "id": "19",
+            "name": "BookStack",
+            "description": "Documentation and wiki",
+            "url": "https://www.bookstackapp.com",
+            "icon": "https://www.bookstackapp.com/favicon.ico"
+        },
+        {
+            "id": "20",
+            "name": "Homer",
+            "description": "Service dashboard",
+            "url": "https://github.com/bastienwirtz/homer",
+            "icon": "https://github.githubassets.com/favicons/favicon.png"
+        },
+        {
+            "id": "21",
+            "name": "Paperless-ngx",
+            "description": "Document management system",
+            "url": "https://docs.paperless-ngx.com",
+            "icon": "https://docs.paperless-ngx.com/favicon.ico"
+        },
+        {
+            "id": "22",
+            "name": "Seafile",
+            "description": "File hosting platform",
+            "url": "https://www.seafile.com",
+            "icon": "https://www.seafile.com/favicon.ico"
+        },
+        {
+            "id": "23",
+            "name": "Plausible",
+            "description": "Privacy-friendly analytics",
+            "url": "https://plausible.io",
+            "icon": "https://plausible.io/favicon.ico"
+        },
+        {
+            "id": "24",
+            "name": "Calibre-Web",
+            "description": "E-book library server",
+            "url": "https://github.com/janeczku/calibre-web",
+            "icon": "https://github.githubassets.com/favicons/favicon.png"
+        },
+        {
+            "id": "25",
+            "name": "Syncthing",
+            "description": "File synchronization",
+            "url": "https://syncthing.net",
+            "icon": "https://syncthing.net/img/favicon.ico"
+        },
+        {
+            "id": "26",
+            "name": "MinIO",
+            "description": "S3-compatible object storage",
+            "url": "https://min.io",
+            "icon": "https://min.io/resources/favicon.ico"
+        },
+        {
+            "id": "27",
+            "name": "Netdata",
+            "description": "Real-time system monitoring",
+            "url": "https://www.netdata.cloud",
+            "icon": "https://www.netdata.cloud/favicon.ico"
+        },
+        {
+            "id": "28",
+            "name": "InfluxDB",
+            "description": "Time-series database",
+            "url": "https://www.influxdata.com",
+            "icon": "https://www.influxdata.com/favicon.ico"
+        },
+        {
+            "id": "29",
+            "name": "Plex",
+            "description": "Media server",
+            "url": "https://www.plex.tv",
+            "icon": "https://www.plex.tv/favicon.ico"
+        },
+        {
+            "id": "30",
+            "name": "Nginx Proxy Manager",
+            "description": "Reverse proxy with UI",
+            "url": "https://nginxproxymanager.com",
+            "icon": "https://nginxproxymanager.com/favicon.ico"
         }
     ]
+
+        {
+        "id": "github",
+        "name": "GitHub",
+        "url": "https://github.com",
+        "icon": "https://github.githubassets.com/favicons/favicon.png",
+        "description": "Code hosting platform"
+    },
+    {
+        "id": "youtube",
+        "name": "YouTube",
+        "url": "https://youtube.com",
+        "icon": "https://www.youtube.com/s/desktop/10c3d9b4/img/favicon_144x144.png",
+        "description": "Video sharing"
+    },
+    {
+        "id": "reddit",
+        "name": "Reddit",
+        "url": "https://reddit.com",
+        "icon": "https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png",
+        "description": "Front page of the internet"
+    },
+    {
+        "id": "gmail",
+        "name": "Gmail",
+        "url": "https://mail.google.com",
+        "icon": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
+        "description": "Email by Google"
+    },
+    {
+        "id": "twitter",
+        "name": "X (Twitter)",
+        "url": "https://twitter.com",
+        "icon": "https://abs.twimg.com/favicons/twitter.ico",
+        "description": "Social Media"
+    },
+    {
+        "id": "netflix",
+        "name": "Netflix",
+        "url": "https://netflix.com",
+        "icon": "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico",
+        "description": "Streaming Service"
+    },
+    {
+        "id": "amazon",
+        "name": "Amazon",
+        "url": "https://amazon.com",
+        "icon": "https://www.amazon.com/favicon.ico",
+        "description": "E-commerce"
+    },
+    {
+        "id": "chatgpt",
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com",
+        "icon": "https://chatgpt.com/favicon.ico",
+        "description": "AI Assistant"
+    },
+    {
+        "id": "whatsapp",
+        "name": "WhatsApp",
+        "url": "https://web.whatsapp.com",
+        "icon": "https://www.whatsapp.com/favicon.ico",
+        "description": "Chat with friends and family"
+    },
+    {
+        "id": "discord",
+        "name": "Discord",
+        "url": "https://discord.com",
+        "icon": "https://discord.com/favicon.ico",
+        "description": "Chat with friends and family"
+    },
+    {
+        "id": "spotify",
+        "name": "Spotify",
+        "url": "https://spotify.com",
+        "icon": "https://spotify.com/favicon.ico",
+        "description": "Music streaming"
+    },
+    {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://instagram.com",
+        "icon": "https://instagram.com/favicon.ico",
+        "description": "Social Media"
+    },
+    {
+        "id": "tiktok",
+        "name": "TikTok",
+        "url": "https://tiktok.com",
+        "icon": "https://tiktok.com/favicon.ico",
+        "description": "Social Media"
+    },
+    {
+        "id": "telegram",
+        "name": "Telegram",
+        "url": "https://telegram.com",
+        "icon": "https://telegram.com/favicon.ico",
+        "description": "Chat with friends and family"
+    },
+    {
+        "id": "twitter",
+        "name": "X (Twitter)",
+        "url": "https://twitter.com",
+        "icon": "https://abs.twimg.com/favicons/twitter.ico",
+        "description": "Social Media"
+    },
+    {
+        "id": "linkedin",
+        "name": "LinkedIn",
+        "url": "https://linkedin.com",
+        "icon": "https://www.linkedin.com/favicon.ico",
+        "description": "Professional networking"
+    }
+]
 }

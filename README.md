@@ -77,16 +77,18 @@ Export your current settings from the UI to generate a fresh `config.json` file.
 ```json
 {
   "settings": {
-    "appTitle": "My Dashboard",
-    "greeting": "Welcome Home",
-    "theme": "dark",
-    "accentColor": "#3b82f6",
-    "wallpaper": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e",
-    "blur": true,
-    "layout": "grid",
-    "openNewTab": true,
-    "animations": true
-  },
+        "theme": "system",
+        "accentColor": "#3b82f6",
+        "blur": true,
+        "animations": true,
+        "openNewTab": true,
+        "layout": "grid",
+        "wallpaper": "",
+        "searchProvider": "https://duckduckgo.com/?q=",
+        "weatherEnabled": false,
+        "weatherLocation": "",
+        "customCSS": ""
+    },
   "services": [
     {
       "id": "1",

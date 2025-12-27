@@ -20,9 +20,9 @@ settings.loadConfig().then(config => {
         // deleted items in config are removed from the app.
         const mappedServices = config.services.map((s, i) => ({
             ...s,
-            id: s.id || `json-${i}`
+            id: s.id || `json-${i}` // Ensure ID consistency relies on config order if ID missing
         }));
-        services.replaceAll(mappedServices);
+        services.sync(mappedServices);
         console.log(`Loaded ${mappedServices.length} services from config.`);
     }
 
