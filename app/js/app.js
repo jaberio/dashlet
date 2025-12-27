@@ -2,6 +2,8 @@ import { ui } from './ui.js';
 import { settings } from './store.js';
 import { services } from './data.js';
 
+import { pingServices } from './pingservices.js';
+
 console.log("Dashlet Initialized");
 
 // Initialize Config
@@ -23,4 +25,7 @@ settings.loadConfig().then(config => {
         services.replaceAll(mappedServices);
         console.log(`Loaded ${mappedServices.length} services from config.`);
     }
+
+    // Start watching for changes
+    pingServices.start();
 });
