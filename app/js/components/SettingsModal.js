@@ -57,6 +57,18 @@ export const SettingsModal = (currentSettings) => `
                             <span>Enable animations</span>
                         </label>
                     </div>
+                    <div class="setting-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="setting-disableDragDrop" ${currentSettings.disableDragDrop ? 'checked' : ''}>
+                            <span>Disable Drag & Drop</span>
+                        </label>
+                    </div>
+                    <div class="setting-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="setting-dragDelay" ${currentSettings.dragDelay > 0 ? 'checked' : ''}>
+                            <span>Mobile-Safe Drag (Long Press)</span>
+                        </label>
+                    </div>
                 </section>
 
                 <section>

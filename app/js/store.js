@@ -9,7 +9,9 @@ const DEFAULT_SETTINGS = {
     searchProvider: 'https://duckduckgo.com/?q=',
     weatherEnabled: false,
     weatherLocation: '',
-    customCSS: ''
+    customCSS: '',
+    disableDragDrop: false,
+    dragDelay: 0
 };
 
 export class SettingsStore {

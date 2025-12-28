@@ -6,6 +6,8 @@
 
 Dashlet is a modern, self-hosted dashboard for your homelab services, focusing on a clean code, modular styling, and robust settings management.
 
+
+
 ## Features
 
 - **Pure & Fast**: Built with Vanilla JS and SCSS. No heavy frameworks.

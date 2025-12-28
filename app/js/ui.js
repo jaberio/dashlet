@@ -40,6 +40,8 @@ export class UI {
                 // Better approach: Update text content directly or delegate listener to #app.
             }
             this.updateHeaderText(newSettings);
+            // Re-render services if drag settings changed
+            this.renderServices();
         });
 
         // Initial Render
@@ -75,9 +77,13 @@ export class UI {
 
         // Init/Re-init Sortable
         if (this.sortable) this.sortable.destroy();
+        if (currentSettings.disableDragDrop) return;
+
         this.sortable = new Sortable(grid, {
             animation: 150,
             ghostClass: 'sortable-ghost',
+            delay: currentSettings.dragDelay || 0,
+            delayOnTouchOnly: true,
             onEnd: (evt) => {
                 const ids = Array.from(grid.children).map(el => el.getAttribute('data-id'));
                 const reordered = ids.map(id => allServices.find(s => s.id === id)).filter(Boolean);
@@ -132,6 +138,14 @@ export class UI {
         bindCheckbox('setting-openNewTab', 'openNewTab');
         bindCheckbox('setting-animations', 'animations');
         bindCheckbox('setting-blur', 'blur');
+        bindCheckbox('setting-disableDragDrop', 'disableDragDrop');
+
+        const dragDelayEl = document.getElementById('setting-dragDelay');
+        if (dragDelayEl) {
+            dragDelayEl.addEventListener('change', (e) => {
+                settings.set('dragDelay', e.target.checked ? 400 : 0);
+            });
+        }
 
         bindInput('setting-accent', 'accentColor');
         bindInput('setting-wallpaper', 'wallpaper');
