@@ -29,18 +29,6 @@ export class UI {
         services.subscribe(() => this.renderServices());
         settings.subscribe((newSettings) => {
             this.applySettings(newSettings);
-            // Re-render header to update title/greeting if changed
-            const oldHeader = document.querySelector('header');
-            if (oldHeader) {
-                const temp = document.createElement('div');
-                temp.innerHTML = Header(newSettings);
-                oldHeader.replaceWith(temp.firstElementChild);
-                // Need to re-bind listener? 
-                // Yes, listeners attached to old header are gone.
-                // Better approach: Update text content directly or delegate listener to #app.
-            }
-            this.updateHeaderText(newSettings);
-            // Re-render services if drag settings changed
             this.renderServices();
         });
 
@@ -54,8 +42,6 @@ export class UI {
     updateHeaderText(s) {
         const logo = document.querySelector('.logo');
         if (logo) logo.textContent = s.appTitle || 'Dashlet';
-        const greet = document.querySelector('.greeting');
-        if (greet) greet.textContent = s.greeting || 'Lightweight dashboard for small apps';
 
         // Update Layout Icon
         const btnLayout = document.getElementById('btn-layout');
@@ -329,6 +315,16 @@ export class UI {
             if (s.layout === 'list') grid.classList.add('list-view');
             else grid.classList.remove('list-view');
         }
+
+        // Re-render header to update title/search visibility
+        const oldHeader = document.querySelector('header');
+        if (oldHeader) {
+            const temp = document.createElement('div');
+            temp.innerHTML = Header(s);
+            oldHeader.replaceWith(temp.firstElementChild);
+        }
+
+        this.updateHeaderText(s);
 
         // Re-init weather if visibility changed
         this.initWeather();
