@@ -6,13 +6,12 @@ const DEFAULT_SETTINGS = {
     openNewTab: true,
     layout: 'grid', // grid, list
     wallpaper: '',
-    searchProvider: 'https://duckduckgo.com/?q=',
-    weatherEnabled: false,
-    weatherLocation: '',
     customCSS: '',
     disableDragDrop: false,
     dragDelay: 0,
-    searchEnabled: true
+    searchEnabled: true,
+    footerText: 'Powered by Dashlet',
+    footerColor: 'rgba(255, 255, 255, 0.4)'
 };
 
 export class SettingsStore {

@@ -59,16 +59,14 @@ export const SettingsModal = (currentSettings) => `
                 </section>
 
                 <section>
-                    <h3>Weather</h3>
+                    <h3>Footer</h3>
                     <div class="setting-row">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="setting-weatherEnabled" ${currentSettings.weatherEnabled ? 'checked' : ''}>
-                            <span>Enable Weather</span>
-                        </label>
+                        <label for="setting-footerText">Footer Text</label>
+                        <input type="text" id="setting-footerText" placeholder="Powered by Dashlet" value="${currentSettings.footerText || ''}">
                     </div>
                     <div class="setting-row">
-                        <label for="setting-weatherLocation">Location (City or Lat,Lon)</label>
-                        <input type="text" id="setting-weatherLocation" placeholder="London or 51.50,-0.12" value="${currentSettings.weatherLocation || ''}">
+                        <label for="setting-footerColor">Footer Color</label>
+                        <input type="text" id="setting-footerColor" placeholder="rgba(255, 255, 255, 0.4)" value="${currentSettings.footerColor || ''}">
                     </div>
                 </section>
 

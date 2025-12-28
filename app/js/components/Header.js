@@ -11,7 +11,6 @@ export const Header = (settings) => `
         ` : ''}
         
         <div class="controls-right">
-            <div id="weather-widget" class="weather-widget"></div>
             <div class="controls">
                 <button class="icon-btn" id="btn-layout" title="Toggle Layout">
                     <span class="material-symbols-rounded">${settings.layout === 'list' ? 'grid_view' : 'view_list'}</span>

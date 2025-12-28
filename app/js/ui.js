@@ -19,7 +19,7 @@ export class UI {
             <main id="main-content">
                 <div class="content-grid" id="grid"></div>
             </main>
-            ${Footer()}
+            ${Footer(settings.settings)}
             <div id="modal-container"></div>
         `;
 
@@ -36,7 +36,6 @@ export class UI {
         this.renderServices();
         this.applySettings(settings.settings);
         this.initSearch();
-        this.initWeather();
     }
 
     updateHeaderText(s) {
@@ -123,51 +122,6 @@ export class UI {
         window.open(url, settings.get('openNewTab') ? '_blank' : '_self');
     }
 
-    async initWeather() {
-        const s = settings.settings;
-        const widget = document.getElementById('weather-widget');
-        if (!widget) return;
-
-        if (!s.weatherEnabled || !s.weatherLocation) {
-            widget.innerHTML = '';
-            return;
-        }
-
-        try {
-            let lat, lon;
-            const loc = s.weatherLocation.trim();
-
-            // Try to parse as Coords (Lat,Lon)
-            if (loc.includes(',') && !isNaN(loc.split(',')[0])) {
-                [lat, lon] = loc.split(',').map(c => c.trim());
-            } else {
-                // Try Geocoding (City Name)
-                const geoResp = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(loc)}&count=1&language=en&format=json`);
-                const geoData = await geoResp.json();
-                if (geoData.results && geoData.results.length > 0) {
-                    lat = geoData.results[0].latitude;
-                    lon = geoData.results[0].longitude;
-                } else {
-                    throw new Error('City not found');
-                }
-            }
-
-            const resp = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
-            const data = await resp.json();
-
-            if (data.current_weather) {
-                const temp = Math.round(data.current_weather.temperature);
-                widget.innerHTML = `
-                    <span class="weather-temp">${temp}°C</span>
-                    <span class="material-symbols-rounded weather-icon">cloud</span>
-                `;
-            }
-        } catch (e) {
-            console.error('Weather fetch failed:', e);
-            widget.innerHTML = '<span class="weather-error" title="Weather failed: ' + e.message + '">!</span>';
-        }
-    }
-
     openSettings() {
         const container = document.getElementById('modal-container');
         container.innerHTML = SettingsModal(settings.settings);
@@ -211,8 +165,8 @@ export class UI {
         bindInput('setting-appTitle', 'appTitle');
         bindInput('setting-greeting', 'greeting');
         bindInput('setting-search', 'searchProvider');
-        bindCheckbox('setting-weatherEnabled', 'weatherEnabled');
-        bindInput('setting-weatherLocation', 'weatherLocation');
+        bindInput('setting-footerText', 'footerText');
+        bindInput('setting-footerColor', 'footerColor');
 
         // Actions
         document.getElementById('btn-reset').addEventListener('click', () => {
@@ -326,8 +280,15 @@ export class UI {
 
         this.updateHeaderText(s);
 
-        // Re-init weather if visibility changed
-        this.initWeather();
+        // Re-render footer to update text/color
+        const oldFooter = document.querySelector('footer');
+        if (oldFooter) {
+            const temp = document.createElement('div');
+            temp.innerHTML = Footer(s);
+            oldFooter.replaceWith(temp.firstElementChild);
+        }
+
+        this.updateHeaderText(s);
     }
 }
 

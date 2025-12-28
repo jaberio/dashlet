@@ -1,7 +1,7 @@
-export const Footer = () => `
-    <footer class="app-footer">
+export const Footer = (settings) => `
+    <footer class="app-footer" style="color: ${settings.footerColor || 'inherit'}">
         <div class="footer-content">
-            <span>Powered by <a href="https://github.com/JaberQayad/dashlet">Dashlet</a></span>
+            <span>${settings.footerText || 'Powered by Dashlet'}</span>
         </div>
     </footer>
 `;

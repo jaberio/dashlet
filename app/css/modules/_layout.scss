@@ -153,34 +153,6 @@ main {
         flex: 0 0 auto;
     }
 
-    .weather-widget {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0 0.75rem;
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        color: var(--text-color);
-        backdrop-filter: blur(10px);
-        height: 38px; // Match slim height
-
-        &:empty {
-            display: none;
-        }
-
-        .weather-temp {
-            font-size: 0.9rem;
-        }
-
-        .weather-icon {
-            font-size: 18px;
-            color: $primary-color;
-        }
-    }
-
     .controls {
         display: flex;
         gap: 0.75rem;
