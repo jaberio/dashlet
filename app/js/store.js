@@ -1,11 +1,14 @@
 const DEFAULT_SETTINGS = {
     theme: 'system', // system, dark, light
+    appTitle: 'Dashlet',
+    greeting: 'Welcome',
     accentColor: '#3b82f6',
     blur: true,
     animations: true,
     openNewTab: true,
     layout: 'grid', // grid, list
     wallpaper: '',
+    searchProvider: 'https://duckduckgo.com/?q=',
     customCSS: '',
     disableDragDrop: false,
     dragDelay: 0,

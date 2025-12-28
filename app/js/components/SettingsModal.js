@@ -58,7 +58,6 @@ export const SettingsModal = (currentSettings) => `
                     <small class="help-text">Query placeholder should be <code>%s</code> or at the end of the URL.</small>
                 </section>
 
-
                 <section>
                     <h3>Behavior</h3>
                     <div class="setting-row">
