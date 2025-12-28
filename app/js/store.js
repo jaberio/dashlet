@@ -55,6 +55,9 @@ export class SettingsStore {
             delete settings.weatherEnabled;
             delete settings.weatherLocation;
             delete settings.weatherProvider;
+            if (settings.footerText === 'Powered by Dashlet') {
+                settings.footerText = 'Powered by';
+            }
             return settings;
         } catch (e) {
             console.error('Failed to load settings:', e);
