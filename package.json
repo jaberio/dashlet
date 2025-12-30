@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Lightweight dashboard for small apps",
   "author": "Jaber Qayad",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://jaberqayad.github.io/dashlet/",
   "repository": {
     "type": "git",
