@@ -1,17 +1,25 @@
 {
   "name": "dashlet",
   "version": "1.0.0",
+  "description": "Lightweight dashboard for small apps",
+  "author": "Jaber Qayad",
+  "license": "ISC",
+  "homepage": "https://jaberqayad.github.io/dashlet/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaberQayad/dashlet.git"
+  },
   "main": "index.js",
   "scripts": {
-    "sass:watch": "sass --watch app/css/main.scss:app/css/main.css",
-    "serve": "live-server app --port=3000",
-    "dev": "concurrently \"npm run sass:watch\" \"npm run serve\"",
-    "build": "sass app/css/main.scss:app/css/main.css --no-source-map --style compressed"
+    "start": "serve . -l 8989",
+    "build": "sass app/css/main.scss:app/css/main.css --no-source-map --style compressed",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run serve:dev\"",
+    "serve:dev": "live-server app --port=8989",
+    "sass:watch": "sass --watch app/css/main.scss:app/css/main.css"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
   "devDependencies": {
     "concurrently": "^9.2.1",
     "live-server": "^1.2.2",

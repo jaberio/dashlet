@@ -7,4 +7,4 @@ if [ ! -f public/config.json ]; then
 fi
 
 # Start the application
-exec npx serve . -l 8989
+exec npm start

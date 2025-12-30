@@ -35,11 +35,17 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
    ```bash
    npm install
    ```
-3. Run dev mode (watch SCSS):
+3. Run dev mode (watch SCSS and live reload):
    ```bash
    npm run dev
    ```
-   This will start a local server at `http://127.0.0.1:8989` and watch for SCSS changes.
+   This starts the development server at `http://localhost:8989`.
+
+4. (Optional) Run production preview:
+   ```bash
+   npm start
+   ```
+   This serves the static files without live reload.
 
 ### Deployment (Netlify/Vercel)
 
