@@ -145,6 +145,9 @@ export class UI {
         const container = document.getElementById('modal-container');
         container.innerHTML = SettingsModal(settings.settings);
 
+        const countEl = document.getElementById('settings-service-count');
+        if (countEl) countEl.textContent = `${services.getAll().length} items`;
+
         const close = () => { container.innerHTML = ''; };
         document.getElementById('close-settings').addEventListener('click', close);
         document.getElementById('settings-backdrop').addEventListener('click', (e) => {

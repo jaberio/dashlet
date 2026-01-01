@@ -145,6 +145,29 @@
                     }
                 }
             }
+
+            .modal-footer-info {
+                margin-top: 1.5rem;
+                padding: 0.75rem 0 0.25rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.03);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.4rem;
+                font-size: 0.65rem;
+                color: var(--text-muted);
+                opacity: 0.5;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+
+                .dot {
+                    width: 4px;
+                    height: 4px;
+                    background: $primary-color;
+                    border-radius: 50%;
+                    box-shadow: 0 0 6px rgba($primary-color, 0.3);
+                }
+            }
         }
     }
 }

@@ -102,6 +102,11 @@ export const SettingsModal = (currentSettings) => `
                         <button id="btn-reset" class="danger-btn">Reset to Defaults</button>
                     </div>
                 </section>
+
+                <div class="modal-footer-info">
+                    <span class="dot"></span>
+                    <span id="settings-service-count">0 items</span>
+                </div>
             </div>
         </div>
     </div>
