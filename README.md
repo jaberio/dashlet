@@ -18,7 +18,8 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
 - **Customizable**:
     - **Themes**: System, Dark, Light, Custom Accent Colors.
     - **Backgrounds**: Set custom wallpaper URLs.
-    - **Drag & Drop**: Reorder your services easily.
+    - **Dynamic Sorting**: Sort by Name, URL, Description, or Manual order.
+- **Drag & Drop**: Reorder your services effortlessly in Manual mode.
     - **Header/Footer**: Clean layout with fixed controls.
     - **Custom Files**: `public/custom.css` and `public/custom.js` support.
 
@@ -97,6 +98,7 @@ Export your current settings from the UI to generate a fresh `config.json` file.
         "layout": "grid",
         "wallpaper": "",
         "searchProvider": "https://duckduckgo.com/?q=",
+        "sortBy": "manual",
         "customCSS": ""
     },
   "services": [
