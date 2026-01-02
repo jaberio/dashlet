@@ -29,7 +29,7 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
 
 1. Clone or download:
    ```bash
-   git clone https://github.com/JaberQayad/dashlet.git
+   git clone https://github.com/Jaberio/dashlet.git
    cd dashlet
    ```
 2. Install dependencies (for SCSS compiler):
@@ -50,9 +50,9 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
 
 ### Deployment (Netlify/Vercel)
 
-- [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JaberQayad/dashlet) 
+- [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jaberio/dashlet) 
 
-- [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git-source?repository=https://github.com/JaberQayad/dashlet)
+- [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git-source?repository=https://github.com/Jaberio/dashlet)
 
 
 ### Docker Deployment
