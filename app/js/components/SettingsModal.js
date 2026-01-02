@@ -17,7 +17,7 @@ export const SettingsModal = (currentSettings) => `
                     </div>
                     <div class="setting-row">
                         <label for="setting-greeting">Greeting</label>
-                        <input type="text" id="setting-greeting" value="${currentSettings.greeting || 'Lightweight dashboard for small apps'}" placeholder="Welcome">
+                        <input type="text" id="setting-greeting" value="${currentSettings.greeting || 'Lightweight dashboard for small apps'}" placeholder="Lightweight dashboard for small apps">
                     </div>
                     <div class="setting-row">
                         <label for="setting-theme">Theme</label>
