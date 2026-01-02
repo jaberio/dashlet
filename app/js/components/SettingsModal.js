@@ -67,7 +67,6 @@ export const SettingsModal = (currentSettings) => `
                         </label>
                     </div>
                     <div class="setting-row">
-                        <label class="checkbox-label">
                             <input type="checkbox" id="setting-animations" ${currentSettings.animations ? 'checked' : ''}>
                             <span>Enable animations</span>
                         </label>

@@ -113,6 +113,29 @@ export class SettingsStore {
         return false;
     }
 
+    replace(newSettings) {
+        try {
+            // Merge with defaults to ensure completeness
+            const safeSettings = { ...DEFAULT_SETTINGS };
+
+            // Only copy known keys to avoid pollution
+            Object.keys(DEFAULT_SETTINGS).forEach(key => {
+                if (newSettings.hasOwnProperty(key)) {
+                    safeSettings[key] = newSettings[key];
+                }
+            });
+
+            this.settings = safeSettings;
+            this.save();
+            this.notify();
+            return true;
+        } catch (e) {
+            console.error('Available keys:', Object.keys(DEFAULT_SETTINGS));
+            console.error('Failed to replace settings:', e);
+            return false;
+        }
+    }
+
     // Simple pub/sub for reactive UI updates
     subscribe(callback) {
         this.subscribers.push(callback);

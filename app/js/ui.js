@@ -232,10 +232,8 @@ export class UI {
                         }
 
                         if (data && data.settings) {
-                            // Import Settings
-                            Object.keys(settings.settings).forEach(k => {
-                                if (data.settings[k] !== undefined) settings.set(k, data.settings[k]);
-                            });
+                            // Atomic replace
+                            settings.replace(data.settings);
                         }
                         if (data && data.services) {
                             services.replaceAll(data.services);
