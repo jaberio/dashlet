@@ -9,8 +9,3 @@ services:
       - "8989:8989"
     volumes:
       - ./app/public:/app/public
-    healthcheck:
-      test: [ "CMD", "wget", "--spider", "-q", "http://localhost:8989/" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
