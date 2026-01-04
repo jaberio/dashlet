@@ -3,8 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    paths:
+      - "app/**"
+      - "doc/**"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -14,13 +16,11 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying static files
   deploy:
     environment:
       name: github-pages
@@ -33,21 +33,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
           cache-dependency-path: doc/package-lock.json
 
+      - name: Install docs deps
+        working-directory: doc
+        run: npm ci
+
       - name: Build Docusaurus
-        run: |
-          cd doc
-          npm install
-          npm run build
+        working-directory: doc
+        run: npm run build
 
       - name: Prepare Deployment Artifact
         run: |
-          mkdir staging
-          cp -rv app/* staging/
-          cp -rv doc/build staging/doc
+          rm -rf staging
+          mkdir -p staging
+          cp -a app/. staging/
+          cp -a doc/build/. staging/docs/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
