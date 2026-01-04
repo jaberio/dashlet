@@ -42,6 +42,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -89,23 +90,6 @@ const config: Config = {
         src: 'img/logo.png',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'guidesSidebar',
-          position: 'left',
-          label: 'Guides',
-        },
-        {
-          label: 'Demo',
-          href: 'https://jaberio.github.io/dashlet/',
-          position: 'left',
-        },
         { to: '/changelog', label: 'Changelog', position: 'left' },
         {
           href: 'https://github.com/jaberio/dashlet',
@@ -121,12 +105,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Overview',
-              to: '/docs/intro',
+              label: 'Introduction',
+              to: '/',
             },
             {
-              label: 'Guides',
-              to: '/docs/guides/intro',
+              label: 'Installation',
+              to: '/installation',
             },
           ],
         },

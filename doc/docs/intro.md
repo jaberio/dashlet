@@ -1,31 +1,24 @@
+---
+slug: /
+---
 # Introduction
 
-Welcome to the Dashlet documentation! Dashlet is a modern, lightweight, and self-hosted dashboard designed for your homelab and small applications.
+Dashlet is a modern, self-hosted dashboard for your homelab services, focusing on clean code, modular styling, and robust settings management.
 
-## What is Dashlet?
+## Features
 
-Dashlet provides a single entry point for all your web services.
+- **Pure & Fast**: Built with Vanilla JS and SCSS. No heavy frameworks.
+- **Glassmorphism UI**: Modern, sleek interface with dynamic animations.
+- **Config Driven**: Load settings/services from `public/config.json`.
+- **Customizable**:
+    - **Themes**: System, Dark, Light, Custom Accent Colors.
+    - **Backgrounds**: Set custom wallpaper URLs.
+    - **Dynamic Sorting**: Sort by Name, URL, Description, or Manual order.
+- **Drag & Drop**: Reorder your services effortlessly in Manual mode.
 
-[**🚀 View Live Demo**](https://jaberio.github.io/dashlet/)
+## Get to know Dashlet
 
-![Dashlet Showcase](/img/screenshots/showcase.gif)
+- [Demo](https://jaberio.github.io/dashlet/)
+- [Installation](./installation.md)
+- [Configuration](./configuration.md)
 
-It's built with a focus on:
-
-- **Speed**: Minimalistic design with Vanilla JS or SCSS.
-- **Privacy**: No tracking, no external data collection.
-- **Customization**: A beautiful Glassmorphism UI that you can tweak to your liking.
-- **Ease of Use**: Config-driven architecture makes deployment a breeze.
-
-## Core Features
-
-- **Glassmorphism UI**: A sleek, modern interface with smooth animations and blur effects.
-- **Theme Support**: System-aware themes (Light/Dark) and custom accent colors.
-- **Config Driven**: All your settings and services are stored in a simple JSON file.
-- **Drag & Drop**: Easily reorder your services directly from the UI.
-- **Dynamic Search**: Integrated search bar with customizable providers.
-- **Mobile Friendly**: Fully responsive design that looks great on any device.
-
-## Getting Started
-
-Ready to set up your own dashboard? Head over to the [Installation](./installation.md) guide to get started.
