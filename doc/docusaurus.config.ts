@@ -1,13 +1,13 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Dashlet',
-  tagline: 'A modern, privacy-first dashboard',
-  favicon: 'img/favicon.png',
+  title: "Dashlet",
+  tagline: "A modern, privacy-first dashboard",
+  favicon: "img/favicon.png",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -15,62 +15,60 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://jaberio.github.io',
+  url: "https://jaberio.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/dashlet/docs/',
+  baseUrl: "/dashlet/docs/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'jaberio', // Usually your GitHub org/user name.
-  projectName: 'dashlet', // Usually your repo name.
+  organizationName: "jaberio", // Usually your GitHub org/user name.
+  projectName: "dashlet", // Usually your repo name.
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          routeBasePath: '/',
+          sidebarPath: "./sidebars.ts",
+          routeBasePath: "/",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/jaberio/dashlet/tree/main/doc/',
+          editUrl: "https://github.com/jaberio/dashlet/tree/main/doc/",
         },
         blog: {
-          path: 'blog',
-          routeBasePath: 'changelog',
-          blogTitle: 'Changelog',
-          blogDescription: 'Dashlet project changelog',
+          path: "blog",
+          routeBasePath: "changelog",
+          blogTitle: "Changelog",
+          blogDescription: "Dashlet project changelog",
           showReadingTime: false,
-          blogSidebarTitle: 'Recent updates',
-          blogSidebarCount: 'ALL',
+          blogSidebarTitle: "Recent updates",
+          blogSidebarCount: "ALL",
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/jaberio/dashlet/tree/main/doc/',
+          editUrl: "https://github.com/jaberio/dashlet/tree/main/doc/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -78,57 +76,57 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Dashlet',
+      title: "Dashlet",
       logo: {
-        alt: 'Dashlet Logo',
-        src: 'img/logo.png',
+        alt: "Dashlet Logo",
+        src: "img/logo.png",
       },
       items: [
-        { to: '/changelog', label: 'Changelog', position: 'left' },
+        { to: "/changelog", label: "Changelog", position: "left" },
         {
-          href: 'https://github.com/jaberio/dashlet',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/jaberio/dashlet",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Introduction',
-              to: '/',
+              label: "Introduction",
+              to: "/",
             },
             {
-              label: 'Installation',
-              to: '/installation',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/jaberio/dashlet',
+              label: "Installation",
+              to: "/installation",
             },
           ],
         },
         {
-          title: 'More',
+          title: "Community",
           items: [
             {
-              label: 'Changelog',
-              to: '/changelog',
+              label: "GitHub",
+              href: "https://github.com/jaberio/dashlet",
+            },
+          ],
+        },
+        {
+          title: "More",
+          items: [
+            {
+              label: "Changelog",
+              to: "/changelog",
             },
           ],
         },

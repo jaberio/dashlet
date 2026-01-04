@@ -1,4 +1,4 @@
-import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -15,29 +15,34 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   docsSidebar: [
     {
-      type: 'doc',
-      id: 'intro',
-      label: 'Introduction',
+      type: "doc",
+      id: "intro",
+      label: "Introduction",
     },
     {
-      type: 'category',
-      label: 'Getting Started',
-      items: ['installation', 'configuration'],
+      type: "category",
+      label: "Getting Started",
+      items: ["installation", "configuration"],
     },
     {
-      type: 'category',
-      label: 'Helping Out',
-      items: ['contributing'],
+      type: "category",
+      label: "Helping Out",
+      items: ["contributing"],
     },
     {
-      type: 'link',
-      label: 'Demo',
-      href: 'https://jaberio.github.io/dashlet/',
+      type: "link",
+      label: "Demo",
+      href: "https://jaberio.github.io/dashlet/",
     },
     {
-      type: 'link',
-      label: 'GitHub',
-      href: 'https://github.com/jaberio/dashlet',
+      type: "link",
+      label: "Discord",
+      href: "https://discord.com",
+    },
+    {
+      type: "link",
+      label: "GitHub",
+      href: "https://github.com/jaberio/dashlet",
     },
   ],
 };

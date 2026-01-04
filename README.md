@@ -2,7 +2,7 @@
 
 > Lightweight dashboard for small apps
 >
-> **[Live Demo](https://jaberio.github.io/dashlet/)**
+> **[Live Demo](https://jaberio.github.io/dashlet/) | [Documentation](https://jaberio.github.io/dashlet/docs/)**
 >
 > <a href="https://buymeacoffee.com/Jay_me"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-orange?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee"></a>
 

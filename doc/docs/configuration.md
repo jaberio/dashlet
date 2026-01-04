@@ -20,16 +20,16 @@ You can also edit `public/config.json` manually.
 ```json
 {
   "settings": {
-    "theme": "system",          // system, light, dark
-    "accentColor": "#3b82f6",   // HEX color code
-    "blur": true,               // enable/disable glassmorphism blur
-    "animations": true,         // enable/disable animations
-    "openNewTab": true,         // open service links in a new tab
-    "layout": "grid",           // grid
-    "wallpaper": "",            // URL to custom background image
+    "theme": "system", // system, light, dark
+    "accentColor": "#3b82f6", // HEX color code
+    "blur": true, // enable/disable glassmorphism blur
+    "animations": true, // enable/disable animations
+    "openNewTab": true, // open service links in a new tab
+    "layout": "grid", // grid
+    "wallpaper": "", // URL to custom background image
     "searchProvider": "https://duckduckgo.com/?q=",
-    "sortBy": "manual",         // name, manual, url, description
-    "customCSS": ""             // additional custom CSS
+    "sortBy": "manual", // name, manual, url, description
+    "customCSS": "" // additional custom CSS
   },
   "services": [
     {
