@@ -278,6 +278,11 @@ main {
         opacity: 0.8;
     }
 
+    .footer-separator {
+        opacity: 0.3;
+        padding: 0 0.2rem;
+    }
+
     .footer-link {
         font-weight: 600;
         color: var(--text-color);
