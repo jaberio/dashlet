@@ -15,15 +15,33 @@ settings.loadConfig().then(config => {
     const localServices = services.getAll();
 
     if (config && config.services) {
-        // Strict Sync: Config is the source of truth.
-        // If config.services exists, it overwrites local storage to ensure 
-        // deleted items in config are removed from the app.
         const mappedServices = config.services.map((s, i) => ({
             ...s,
             id: s.id || `json-${i}` // Ensure ID consistency relies on config order if ID missing
         }));
-        services.sync(mappedServices);
-        console.log(`Loaded ${mappedServices.length} services from config.`);
+
+        const hasLocal = !!localStorage.getItem('dashlet_services');
+        if (hasLocal) {
+            // Merge-only: keep local deletions and append new config services
+            const localServices = services.getAll();
+            const seen = new Set(localServices.map(s => s.id || s.url));
+            const merged = [...localServices];
+
+            mappedServices.forEach(service => {
+                const key = service.id || service.url;
+                if (!seen.has(key)) {
+                    merged.push(service);
+                    seen.add(key);
+                }
+            });
+
+            services.replaceAll(merged);
+            console.log(`Merged ${mappedServices.length} services from config.`);
+        } else {
+            // First load: config is the source of truth
+            services.sync(mappedServices);
+            console.log(`Loaded ${mappedServices.length} services from config.`);
+        }
     }
 
     // Start watching for changes
