@@ -4,6 +4,7 @@ import { Header } from './components/Header.js';
 import { Footer } from './components/Footer.js';
 import { ServiceCard } from './components/ServiceCard.js';
 import { SettingsModal } from './components/SettingsModal.js';
+import { ContextMenu } from './components/ContextMenu.js';
 
 export class UI {
     constructor() {
@@ -21,6 +22,7 @@ export class UI {
             </main>
             ${Footer(settings.settings)}
             <div id="modal-container"></div>
+            ${ContextMenu()}
         `;
 
         this.setupListeners();
@@ -36,6 +38,7 @@ export class UI {
         this.renderServices();
         this.applySettings(settings.settings);
         this.initSearch();
+        this.initContextMenu();
     }
 
     updateHeaderText(s) {
@@ -121,6 +124,179 @@ export class UI {
                 this.performSearch(e.target.value);
             }
         });
+
+        // Context menu actions
+        this.app.addEventListener('contextmenu', (e) => {
+            const card = e.target.closest('.service-card');
+            if (!card) return;
+            e.preventDefault();
+            const service = services.getAll().find(s => s.id === card.dataset.id);
+            if (!service) return;
+            this.showContextMenu(e.clientX, e.clientY, service);
+        });
+
+        // Long press for mobile context menu
+        this.app.addEventListener('touchstart', (e) => {
+            const card = e.target.closest('.service-card');
+            if (!card) return;
+            this.contextMenuTouchActive = false;
+            this.contextMenuTouchTimer = window.setTimeout(() => {
+                const touch = e.touches[0];
+                const service = services.getAll().find(s => s.id === card.dataset.id);
+                if (!service) return;
+                this.contextMenuTouchActive = true;
+                this.showContextMenu(touch.clientX, touch.clientY, service);
+                if (navigator.vibrate) navigator.vibrate(40);
+            }, 500);
+        }, { passive: true });
+
+        this.app.addEventListener('touchend', (e) => {
+            if (this.contextMenuTouchTimer) {
+                clearTimeout(this.contextMenuTouchTimer);
+                this.contextMenuTouchTimer = null;
+            }
+            if (this.contextMenuTouchActive) {
+                e.preventDefault();
+                this.contextMenuTouchActive = false;
+            }
+        });
+
+        this.app.addEventListener('touchmove', () => {
+            if (this.contextMenuTouchTimer) {
+                clearTimeout(this.contextMenuTouchTimer);
+                this.contextMenuTouchTimer = null;
+            }
+        }, { passive: true });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#context-menu')) {
+                this.hideContextMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.hideContextMenu();
+            }
+        });
+
+        const main = document.getElementById('main-content');
+        if (main) {
+            main.addEventListener('scroll', () => this.hideContextMenu());
+        }
+    }
+
+    initContextMenu() {
+        this.contextMenuEl = document.getElementById('context-menu');
+        this.contextMenuService = null;
+
+        if (!this.contextMenuEl) return;
+
+        this.contextMenuEl.addEventListener('click', (e) => {
+            const item = e.target.closest('.context-menu-item');
+            if (!item || !this.contextMenuService) return;
+            const action = item.dataset.action;
+            this.handleContextAction(action);
+            this.hideContextMenu();
+        });
+    }
+
+    showContextMenu(x, y, service) {
+        if (!this.contextMenuEl) return;
+        this.contextMenuService = service;
+        this.contextMenuEl.classList.remove('hidden');
+        this.contextMenuEl.setAttribute('aria-hidden', 'false');
+
+        this.contextMenuEl.style.left = `${x}px`;
+        this.contextMenuEl.style.top = `${y}px`;
+
+        const rect = this.contextMenuEl.getBoundingClientRect();
+        if (rect.right > window.innerWidth) {
+            this.contextMenuEl.style.left = `${x - rect.width}px`;
+        }
+        if (rect.bottom > window.innerHeight) {
+            this.contextMenuEl.style.top = `${y - rect.height}px`;
+        }
+    }
+
+    hideContextMenu() {
+        if (!this.contextMenuEl) return;
+        this.contextMenuEl.classList.add('hidden');
+        this.contextMenuEl.setAttribute('aria-hidden', 'true');
+        this.contextMenuService = null;
+    }
+
+    handleContextAction(action) {
+        const service = this.contextMenuService;
+        if (!service) return;
+
+        switch (action) {
+            case 'open':
+                this.openService(service);
+                break;
+            case 'newTab':
+                this.openService(service, true);
+                break;
+            case 'copy':
+                this.copyServiceUrl(service);
+                break;
+            case 'share':
+                this.shareService(service);
+                break;
+            case 'delete':
+                this.deleteService(service);
+                break;
+        }
+    }
+
+    openService(service, forceNewTab = false) {
+        if (!service) return;
+        const target = forceNewTab ? '_blank' : (settings.get('openNewTab') ? '_blank' : '_self');
+        window.open(service.url, target);
+    }
+
+    async copyServiceUrl(service) {
+        if (!service) return;
+        const url = service.url;
+
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(url);
+                return;
+            }
+        } catch (e) {
+            console.warn('Clipboard API failed, falling back:', e);
+        }
+
+        const textarea = document.createElement('textarea');
+        textarea.value = url;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+    }
+
+    async shareService(service) {
+        if (!service) return;
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: service.name, url: service.url });
+                return;
+            } catch (e) {
+                console.warn('Share canceled or failed:', e);
+            }
+        }
+        this.copyServiceUrl(service);
+    }
+
+    deleteService(service) {
+        if (!service) return;
+        const confirmed = confirm(`Delete "${service.name}"?`);
+        if (!confirmed) return;
+        services.remove(service.id);
     }
 
     initSearch() {

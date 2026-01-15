@@ -24,6 +24,7 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
 - **Drag & Drop**: Reorder your services effortlessly in Manual mode.
     - **Header/Footer**: Clean layout with fixed controls.
     - **Custom Files**: `public/custom.css` and `public/custom.js` support.
+- **Context Menu**: Right-click (desktop) or long-press (mobile) a service for quick actions (open, copy URL, share, delete).
 
 ## Installation
 

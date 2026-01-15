@@ -16,6 +16,7 @@ Dashlet is a modern, self-hosted dashboard for your homelab services, focusing o
   - **Backgrounds**: Set custom wallpaper URLs.
   - **Dynamic Sorting**: Sort by Name, URL, Description, or Manual order.
 - **Drag & Drop**: Reorder your services effortlessly in Manual mode.
+- **Context Menu**: Right-click (desktop) or long-press (mobile) for quick actions.
 
 ## Get to know Dashlet
 
