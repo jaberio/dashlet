@@ -16,10 +16,5 @@ export const ContextMenu = () => `
             <span class="material-symbols-rounded">share</span>
             <span>Share</span>
         </button>
-        <div class="context-menu-divider" role="separator"></div>
-        <button class="context-menu-item danger" data-action="delete" role="menuitem">
-            <span class="material-symbols-rounded">delete</span>
-            <span>Delete</span>
-        </button>
     </div>
 `;
